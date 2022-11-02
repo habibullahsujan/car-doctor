@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "635f968490bc68eb051d8387",
+    "price": "$3,097.08",
+    "picture": "https://i.ibb.co/GFZ2Wmm/8-1.png",
+    "name": "Car Battery"
+  },
+  {
+    "_id": "635f9684f5516aa11b57ff8e",
+    "price": "$2,307.48",
+    "picture": "https://i.ibb.co/fkF3LYN/9-1.png",
+    "name": "Car Tyre"
+  },
+  {
+    "_id": "635f96844f22a3e3aee254c1",
+    "price": "$3,209.80",
+    "picture": "https://i.ibb.co/sb5Tv5p/88-1.png",
+    "name": "Car Air Filter"
+  },
+  {
+    "_id": "635f9684bc7368b0fad3e630",
+    "price": "$1,622.87",
+    "picture": "https://i.ibb.co/6WDzswY/6-1.png",
+    "name": "Car Disc Brake Rear Wheel"
+  },
+  {
+    "_id": "635f9684430224ea66daa45a",
+    "price": "$3,207.79",
+    "picture": "https://i.ibb.co/6ZQ0jwC/5-1.png",
+    "name": "Car Disc Brake Font Wheel"
+  },
+  {
+    "_id": "635f9684a0cff5208f8ab2ac",
+    "price": "$3,701.55",
+    "picture": "https://i.ibb.co/4PM52wg/pngwing-1.png",
+    "name": "Car Engine Plug"
+  }
+]
