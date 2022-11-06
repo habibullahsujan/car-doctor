@@ -40,6 +40,7 @@ const UserContext = ({ children }) => {
   };
   const logOut = () => {
     setLoader(true);
+    localStorage.removeItem('userAccess')
     return signOut(auth);
   };
   useEffect(() => {

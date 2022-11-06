@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import sideImg from ".././Utility/Images/login/login.svg";
 import { AuthContext } from "../Context/UserContext";
+import { jwtVerification } from "../Utility/jwtVerification";
 const Login = () => {
   const { loginUser, signInUsingGoogle } = useContext(AuthContext);
-  const location=useLocation();
-  const from =location.state?.from?.pathname || '/'
-  const navigate=useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -18,14 +20,23 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        jwtVerification(user);
+        toast.success("Login Success");
         form.reset();
-        navigate(from,{replace:true})
+        navigate(from, { replace: true });
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        toast.error(error.message);
+
+        console.error(error);
+      });
   };
   const handleGoogleSignIn = () => {
     signInUsingGoogle()
-      .then((result) => console.log(result))
+      .then((result) => {
+        console.log(result);
+        navigate(from, { replace: true });
+      })
       .catch((error) => console.error(error));
   };
   return (
@@ -41,7 +52,7 @@ const Login = () => {
             className="space-y-6 ng-untouched ng-pristine ng-valid"
           >
             <div className="space-y-1 text-sm">
-              <label for="email" className="block dark:text-gray-400">
+              <label htmlFor="email" className="block dark:text-gray-400">
                 Email
               </label>
               <input
@@ -53,7 +64,7 @@ const Login = () => {
               />
             </div>
             <div className="space-y-1 text-sm">
-              <label for="password" className="block dark:text-gray-400">
+              <label htmlFor="password" className="block dark:text-gray-400">
                 Password
               </label>
               <input

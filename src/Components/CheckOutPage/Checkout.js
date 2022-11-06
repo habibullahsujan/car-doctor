@@ -1,14 +1,13 @@
 import React, { useContext } from "react";
-import { useLoaderData, useNavigate} from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 
 const Checkout = () => {
   const selectedService = useLoaderData();
   const { user } = useContext(AuthContext);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const { img, title, service_id, price } = selectedService;
-
 
   const handleConfirmOrder = (e) => {
     e.preventDefault();
@@ -20,6 +19,11 @@ const Checkout = () => {
     const message = form.message.value;
     const fullName = `${firstName} ${lastName}`;
 
+    const time = new Date();
+    const date = time.getDate();
+    const month = time.getMonth();
+    const year = time.getFullYear();
+    const fullTime={date:date, month:month, year:year}
 
     const confirmOrderDetails = {
       serviceName: title,
@@ -30,6 +34,7 @@ const Checkout = () => {
       customerMessage: message,
       email: user?.email || email,
       servicePicture: img,
+      orderConfirmationTime:fullTime,
     };
 
     fetch("http://localhost:5000/confirmOrder", {
@@ -44,7 +49,7 @@ const Checkout = () => {
         console.log(data);
         if (data.acknowledged) {
           alert("Order  Placed to Expert Team.");
-          navigate('/confirmOrder')
+          navigate("/confirmOrder");
           form.reset();
         }
       });
@@ -109,12 +114,11 @@ const Checkout = () => {
               required
             ></textarea>
           </div>
-          <button 
+          <button
             type="submit"
-           
             className="w-full bg-[#FF3811] py-3 rounded-lg font-bold text-white text-center"
           >
-           Confirm Order
+            Confirm Order
           </button>
         </form>
       </div>

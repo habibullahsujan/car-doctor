@@ -8,6 +8,7 @@ import slideImg5 from "../../Utility/Images/banner/5.jpg";
 import slideImg6 from "../../Utility/Images/banner/6.jpg";
 import Slider from "react-slick";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import './Carousel.css'
 
 const Teams = () => {
   const settings = {
@@ -54,8 +55,8 @@ const Teams = () => {
   return (
     <div>
       <Slider {...settings}>
-        <div className="border border-gray-500 p-2 rounded-lg">
-          <img src={slideImg1} alt="" className="rounded-lg" />
+        <div className="border border-gray-500 p-2 rounded-lg slideImg">
+          <img src={slideImg1} alt="" className="rounded-lg "  />
           <div className="text-center">
             <h1 className="text-xl font-bold">Car Engine Plug</h1>
             <p>Engine Expert</p>
@@ -67,7 +68,7 @@ const Teams = () => {
             </div>
           </div>
         </div>
-        <div className="border border-gray-500 p-2 rounded-lg">
+        <div className="border border-gray-500 p-2 rounded-lg slideImg">
           <img src={slideImg2} alt="" className="rounded-lg" />
           <div className="text-center">
             <h1 className="text-xl font-bold">Car Engine Plug</h1>
@@ -80,7 +81,7 @@ const Teams = () => {
             </div>
           </div>
         </div>
-        <div className="border border-gray-500 p-2 rounded-lg">
+        <div className="border border-gray-500 p-2 rounded-lg slideImg">
           <img src={slideImg3} alt="" className="rounded-lg" />
           <div className="text-center">
             <h1 className="text-xl font-bold">Car Engine Plug</h1>
@@ -93,7 +94,7 @@ const Teams = () => {
             </div>
           </div>
         </div>
-        <div className="border border-gray-500 p-2 rounded-lg">
+        <div className="border border-gray-500 p-2 rounded-lg slideImg">
           <img src={slideImg4} alt="" className="rounded-lg" />
           <div className="text-center">
             <h1 className="text-xl font-bold">Car Engine Plug</h1>
@@ -106,7 +107,7 @@ const Teams = () => {
             </div>
           </div>
         </div>
-        <div className="border border-gray-500 p-2 rounded-lg">
+        <div className="border border-gray-500 p-2 rounded-lg slideImg">
           <img src={slideImg5} alt="" className="rounded-lg" />
           <div className="text-center">
             <h1 className="text-xl font-bold">Car Engine Plug</h1>
@@ -119,7 +120,7 @@ const Teams = () => {
             </div>
           </div>
         </div>
-        <div className="border border-gray-500 p-2 rounded-lg">
+        <div className="border border-gray-500 p-2 rounded-lg slideImg">
           <img src={slideImg6} alt="" className="rounded-lg" />
           <div className="text-center">
             <h1 className="text-xl font-bold">Car Engine Plug</h1>

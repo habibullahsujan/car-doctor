@@ -2,18 +2,14 @@ import React from "react";
 import { FaTrash } from "react-icons/fa";
 
 const Order = ({ order, clickToDeleteOrder, handleStatusUpdate }) => {
-  const { servicePicture, servicePrice, serviceName, _id, status } = order;
-
-  const time = new Date();
-  const date = time.getDate();
-  const month = time.getMonth();
-  const year = time.getFullYear();
-
+  const { servicePicture, servicePrice, serviceName, _id, status, orderConfirmationTime } = order;
+ 
   const handleDeleteOrder = (id) => {
     const confirmation = window.confirm("Are You Sure? Delete this item?");
     if (confirmation) {
       fetch(`http://localhost:5000/deleteOrder/${id}`, {
         method: "DELETE",
+      
       })
         .then((res) => res.json())
         .then((data) => {
@@ -45,7 +41,7 @@ const Order = ({ order, clickToDeleteOrder, handleStatusUpdate }) => {
         </div>
         <div>
           <h4 className="font-bold text-lg">
-            {date}-{month}-{year}
+            {orderConfirmationTime?.date}-{orderConfirmationTime?.month}-{orderConfirmationTime?.year}
           </h4>
         </div>
         <div>

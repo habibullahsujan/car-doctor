@@ -12,6 +12,7 @@ const Header = () => {
     logOut()
       .then(() => {
         console.log("Log Out success");
+        localStorage.removeItem('userAccess')
       })
       .catch((error) => console.error(error));
   };
@@ -70,7 +71,7 @@ const Header = () => {
           </ul>
           <div className="items-center flex-shrink-0 hidden lg:flex gap-10">
             <div className="flex gap-5">
-              <FaShoppingBag />
+             <Link to={'/confirmOrder'}> <FaShoppingBag /></Link>
               <FaSearch />
             </div>
             <button className="border border-[#FF3811] p-2 text-[#FF3811] font-bold">
